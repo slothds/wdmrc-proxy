@@ -13,6 +13,6 @@ RUN     wget --no-check-certificate https://github.com/yar229/WebDavMailRuCloud/
         mkdir -p ${WDMRC_HOME} && \
         unzip /tmp/wdmrc-core.zip -d ${WDMRC_HOME} && \
         rm -rf /tmp/*
-ENTRYPOINT ["/usr/bin/mono", "/usr/lib/mono/4.5/mono-service.exe", "/opt/home/wdmrc/wdmrc.exe", "-h", "http://*", "-p", "801", "--protocol", "WebV2"]
+ENTRYPOINT ["/usr/bin/mono", "/usr/lib/mono/4.5/mono-service.exe", "/opt/home/wdmrc/wdmrc.exe", "-h", "http://*", "-p", "801"]
 
 EXPOSE  801
