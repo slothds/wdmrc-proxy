@@ -1,7 +1,7 @@
 docker/wdmrc-proxy
 ======
 WebDav proxy to Mail.ru Cloud  
-Author [https://github.com/yar229](yar229) [https://github.com/yar229/WebDavMailRuCloud](GitHub)
+Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/WebDavMailRuCloud))
 
 # Предисловие
 ``т.к. с разговорным английским у меня, мягко говоря, хреновато,  
@@ -33,6 +33,6 @@ Author [https://github.com/yar229](yar229) [https://github.com/yar229/WebDavMail
 # Как пользоваться
 т.к. данная утилита - это просто прокси, транслирующая запросы от вашего webdav клинта  
 к сервисам mail.ru, вам, собственно, потребуется webdav клиент.  
-Более детально с данным вопросом лучше ознакомиться в документацие от автора: [https://github.com/yar229/WebDavMailRuCloud/blob/master/readme.md](Чтиво) | [https://gist.github.com/yar229/4b702af114503546be1fe221bb098f27](FAQ на русском)  
+Более детально с данным вопросом лучше ознакомиться в документацие от автора: [Чтиво](https://github.com/yar229/WebDavMailRuCloud/blob/master/readme.md) | [FAQ на русском](https://gist.github.com/yar229/4b702af114503546be1fe221bb098f27)  
   
 WebDav URL в клиенте указываете: **http://localhost:801**  
