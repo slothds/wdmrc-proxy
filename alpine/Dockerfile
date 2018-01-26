@@ -16,7 +16,7 @@ RUN    wget --no-check-certificate https://github.com/yar229/WebDavMailRuCloud/r
        unzip /tmp/wdmrc-core.zip -d ${WDMRC_HOME} && \
        chown -R runner:runner ${WDMRC_HOME} && \
        cat /etc/ssl/certs/* > /tmp/ca-root.crt && \
-       cert-sync ca-root.crt && \
+       cert-sync /tmp/ca-root.crt && \
        rm -f /tmp/*
 
 EXPOSE 8081
