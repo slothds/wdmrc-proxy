@@ -30,9 +30,9 @@ Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/W
 
 # Запуск
 docker run -d --restart always \  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--name wdmrc-proxy \  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-p 801:801 \  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slothds/wdmrc-proxy:_{**debian**|**alpine**}_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--name wdmrc-proxy \  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-p 8081:8081 \  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slothds/wdmrc-proxy:_{ **debian** | **alpine** }_
 
 # Как пользоваться
 т.к. данная утилита - это просто прокси, транслирующая запросы от вашего _webdav_ клинта  
@@ -40,4 +40,4 @@ docker run -d --restart always \
 Более детально с данным вопросом лучше ознакомиться в документации от автора:  
 [Чтиво](https://github.com/yar229/WebDavMailRuCloud/blob/master/readme.md) | [FAQ на русском](https://gist.github.com/yar229/4b702af114503546be1fe221bb098f27)  
   
-**WebDav URL** в клиенте указываете: **http://localhost:801**  
+**WebDav URL** в клиенте указываете: **http://localhost:8081**  
