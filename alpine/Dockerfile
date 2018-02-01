@@ -2,7 +2,7 @@ FROM   slothds/alpine-svd:3.7
 
 LABEL  maintainer="sloth@devils.su"
 
-ENV    WDMRC_VERS=1.10.1.9
+ENV    WDMRC_VERS=1.10.1.10
 ENV    WDMRC_HOME=/opt/home/wdmrc
 
 COPY   rootfs /
