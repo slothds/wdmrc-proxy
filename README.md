@@ -4,8 +4,10 @@ WebDav proxy to Mail.ru Cloud
 Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/WebDavMailRuCloud))
 
 # Предисловие
-``т.к. с разговорным английским у меня, мягко говоря, хреновато,``  
-``а использовать автопереводчики не хочу, описание этого чуда будет на русском...``  
+```
+т.к. с разговорным английским у меня, мягко говоря, хреновато,
+а использовать автопереводчики не хочу, описание этого чуда будет на русском...
+```
   
 в связи с тем, что данный образ вдруг появился в описании к самой проксе,  
 подумал что было бы не плохо написать пару строчек о моей поделке.
@@ -16,7 +18,7 @@ Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/W
     2. меньше мусора: если прокси перестанет быть необходимой,  
         удаляется без хвостов и необходимости подчищать пакеты-зависимости.
 * Почему в качестве базового образа используется поделка с _supervisord_ на борту
-    * у Docker`а крайне печально с пробуждением сервисов,  
+    * у Docker'а крайне печально с пробуждением сервисов,  
       завязанных на сетевых протаколах после спячки (особенно на windows).  
       политика _restart=always_ у контейнера частично решает проблему,  
       однако были выявлены случаи когда контейнер попросту повисал,  
@@ -29,10 +31,12 @@ Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/W
       избавляться от него я не планирую.
 
 # Запуск
-docker run -d --restart always \  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--name wdmrc-proxy \  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-p 8081:8081 \  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slothds/wdmrc-proxy:_{ **debian** | **alpine** }_
+```
+docker run -d --restart always \
+           --name wdmrc-proxy \  
+           -p 8081:8081 \  
+           slothds/wdmrc-proxy:{debian|alpine}
+```
 
 # Как пользоваться
 т.к. данная утилита - это просто прокси, транслирующая запросы от вашего _webdav_ клинта  
