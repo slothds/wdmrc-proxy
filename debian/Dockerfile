@@ -1,4 +1,4 @@
-FROM   slothds/debian-svd:stretch
+FROM   slothds/debian-svd:buster
 
 LABEL  maintainer="SlothDS" \
        maintainer.mail="sloth@devils.su" \
@@ -25,4 +25,4 @@ RUN    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
        apt-get -y clean && apt-get -y clean all && \
        rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-EXPOSE 8081
+EXPOSE 8010
