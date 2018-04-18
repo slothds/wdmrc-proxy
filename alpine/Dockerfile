@@ -6,7 +6,7 @@ LABEL  maintainer="SlothDS" \
 
 ENV    WDMRC_VERS="1.10.1.11" \
        WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
-       WDMRC_HOME="/opt/home/wdmrc"
+       WDMRC_HOME="/opt/runner"
 
 COPY   rootfs /
 
