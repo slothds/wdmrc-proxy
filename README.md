@@ -34,7 +34,7 @@ Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/W
 ```
 docker run -d --restart always \
            --name wdmrc-proxy \  
-           -p 8081:8081 \  
+           -p 8010:8010 \  
            slothds/wdmrc-proxy:{debian|alpine}
 ```
 

@@ -23,4 +23,4 @@ RUN    apk update && apk upgrade --no-cache && \
        apk del .install-dep && \
        rm -rf /tmp/* /var/cache/apk/* /var/tmp/*
 
-EXPOSE 8081
+EXPOSE 8010
