@@ -48,4 +48,4 @@ docker run -d --restart always \
 Более детально с данным вопросом лучше ознакомиться в документации от автора:  
 [Чтиво](https://github.com/yar229/WebDavMailRuCloud/blob/master/readme.md) | [FAQ на русском](https://gist.github.com/yar229/4b702af114503546be1fe221bb098f27)  
   
-**WebDav URL** в клиенте указываете: `http://localhost:8081`
+**WebDav URL** в клиенте указываете: `http://localhost:8010`
