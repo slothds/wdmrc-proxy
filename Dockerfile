@@ -19,4 +19,4 @@ RUN     wget --no-check-certificate https://github.com/yar229/WebDavMailRuCloud/
         chown -R runner:runner ${WDMRC_HOME} && \
         rm -f /tmp/*
 
-EXPOSE  801
+EXPOSE  8010
