@@ -2,7 +2,7 @@ FROM    slothds/debian-svd:stretch
 
 LABEL   maintainer="sloth@devils.su"
 
-ENV     WDMRC_VERS=1.10.4.1
+ENV     WDMRC_VERS=1.10.5.7
 ENV     WDMRC_HOME=/opt/home/wdmrc
 
 COPY    rootfs /
@@ -13,7 +13,7 @@ RUN     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0
         apt -y autoremove && apt -y autoclean &&\
         apt -y clean && apt -y clean all && \
         rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-RUN     wget --no-check-certificate https://github.com/yar229/WebDavMailRuCloud/releases/download/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet45.zip -O /tmp/wdmrc-core.zip && \
+RUN     wget --no-check-certificate https://github.com/yar229/WebDavMailRuCloud/releases/download/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet461.zip -O /tmp/wdmrc-core.zip && \
         mkdir -p ${WDMRC_HOME} && \
         unzip /tmp/wdmrc-core.zip -d ${WDMRC_HOME} && \
         chown -R runner:runner ${WDMRC_HOME} && \
