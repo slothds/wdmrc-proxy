@@ -34,10 +34,37 @@ Author [yar229](https://github.com/yar229) ([GitHub](https://github.com/yar229/W
 
 ## Запуск
 
+По умолчанию, WDMRC слушает порт 8010 на всех адресах.
+
 ```text
 docker run -d --restart always \
            --name wdmrc-proxy \
            -p 8010:8010 \
+           slothds/wdmrc-proxy:stable
+```
+
+### Дополнительные параметры
+
+Для смены заданных по умолчанию параметров используются переменные окружения:
+
+```text
+WDMRC_HOST - адрес, который будет слушать WDMRC
+WDMRC_PORT - порт подключения к WDMRC
+WDMRC_ARGS - дополнительные аргументы запуска прокси
+```
+
+#### Пример
+
+Запуск прокси с использованием сети host машины,  
+с прослушиванием только localhost:8080,  
+максимальным числом потоков = 10 и подключением по протоколу WebV2
+
+```text
+docker run -d --net=host \
+           --name=wdmrc-proxy \
+           --env=WDMRC_HOST=http://127.0.0.1 \
+           --env=WDMRC_PORT=8080 \
+           --env=WDMRC_ARGS="--maxthreads=10 --protocol=WebV2" \
            slothds/wdmrc-proxy:stable
 ```
 
