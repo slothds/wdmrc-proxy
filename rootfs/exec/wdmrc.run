@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+WDMRC_EXEC='/opt/runner/wdmrc.exe'
+eval /usr/bin/mono ${WDMRC_EXEC} --host=${WDMRC_HOST} --port=${WDMRC_PORT} ${WDMRC_ARGS}
