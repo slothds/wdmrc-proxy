@@ -6,9 +6,10 @@ LABEL   maintainer="SlothDS" \
 
 ENV     WDMRC_VERS="1.10.5.7" \
         WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
-        WDMRC_HOME="/opt/runner"
-
-COPY    rootfs /
+        WDMRC_HOME="/opt/runner" \
+        WDMRC_PORT="8010" \
+        WDMRC_HOST="http://*" \
+        WDMRC_ARGS=""
 
 RUN     apk add --no-cache --virtual .install-dep ca-certificates curl && \
         apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
@@ -22,4 +23,4 @@ RUN     apk add --no-cache --virtual .install-dep ca-certificates curl && \
         apk del .install-dep && \
         rm -rf /tmp/* /var/cache/apk/* /var/tmp/*
 
-EXPOSE  8010
+COPY    rootfs /
