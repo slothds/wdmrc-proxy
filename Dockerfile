@@ -4,7 +4,7 @@ LABEL   maintainer="SlothDS" \
         maintainer.mail="sloth@devils.su" \
         maintainer.git="https://github.com/slothds"
 
-ENV     WDMRC_VERS="1.11.0.18" \
+ENV     WDMRC_VERS="1.11.0.23" \
         WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
         WDMRC_HOME="/opt/runner" \
         WDMRC_PORT="8010" \
