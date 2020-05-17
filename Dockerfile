@@ -4,7 +4,7 @@ LABEL   maintainer="SlothDS" \
         maintainer.mail="sloth@devils.su" \
         maintainer.git="https://github.com/slothds"
 
-ENV     WDMRC_VERS="1.11.0.15" \
+ENV     WDMRC_VERS="1.11.0.23" \
         WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
         WDMRC_HOME="/opt/runner" \
         WDMRC_PORT="8010" \
@@ -14,7 +14,7 @@ ENV     WDMRC_VERS="1.11.0.15" \
 RUN     apk add --no-cache --virtual .install-dep ca-certificates curl && \
         apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
         curl -kfsSL -o /tmp/wdmrc-core.zip \
-            ${WDMRC_REPO}/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet461.zip && \
+            ${WDMRC_REPO}/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet48.zip && \
         mkdir -p ${WDMRC_HOME} && \
         unzip /tmp/wdmrc-core.zip -d ${WDMRC_HOME} && \
         chown -R runner:runner ${WDMRC_HOME} && \
