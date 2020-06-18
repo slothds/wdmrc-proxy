@@ -1,25 +1,34 @@
-FROM    slothds/alpine-svd:3.9
+FROM    slothds/alpine-svd:3.9-ngx
 
-LABEL   maintainer="SlothDS" \
-        maintainer.mail="sloth@devils.su" \
-        maintainer.git="https://github.com/slothds"
+ARG     WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download"
+ARG     WDMRC_VERS="1.11.0.25"
+ARG     WDMRC_DNET="dotNetCore30"
+ARG     WDMRC_HOME="/opt/runner"
 
-ENV     WDMRC_VERS="1.11.0.18" \
-        WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download" \
-        WDMRC_HOME="/opt/runner" \
+ARG     NCORE_VERS="3.1.5"
+ARG     NCORE_LINK="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-aspnetcore-${NCORE_VERS}-linux-x64-alpine-binaries"
+
+ENV     WDMRC_HOST="http://*" \
         WDMRC_PORT="8010" \
-        WDMRC_HOST="http://*" \
         WDMRC_ARGS=""
 
 RUN     apk add --no-cache --virtual .install-dep ca-certificates curl && \
-        apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
-        curl -kfsSL -o /tmp/wdmrc-core.zip \
-            ${WDMRC_REPO}/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-dotNet48.zip && \
-        mkdir -p ${WDMRC_HOME} && \
+        apk add --no-cache \
+                           icu-libs \
+                           krb5-libs \
+                           libintl \
+                           libssl1.1 \
+                           libstdc++ \
+                           lttng-ust \
+                           zlib \
+        && \
+        mkdir -p ${WDMRC_HOME}/dotnet && \
+        curl -kfsSL $(curl -s ${NCORE_LINK} | sed -rn "s|.*<a href=\"(.*\.tar\.gz)\".*|\1|p;") \
+            | tar -zx -C ${WDMRC_HOME}/dotnet && \
+        curl -kfSL ${WDMRC_REPO}/${WDMRC_VERS}/WebDAVCloudMailRu-${WDMRC_VERS}-${WDMRC_DNET}.zip \
+            -o /tmp/wdmrc-core.zip && \
         unzip /tmp/wdmrc-core.zip -d ${WDMRC_HOME} && \
         chown -R runner:runner ${WDMRC_HOME} && \
-        cat /etc/ssl/certs/* > /tmp/ca-root.crt && \
-        cert-sync /tmp/ca-root.crt && \
         apk del .install-dep && \
         rm -rf /tmp/* /var/cache/apk/* /var/tmp/*
 
