@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-WDMRC_EXEC='/opt/runner/wdmrc.exe'
-eval /usr/bin/mono ${WDMRC_EXEC} --host=${WDMRC_HOST} --port=${WDMRC_PORT} ${WDMRC_ARGS}
+WDMRC_HOME='/opt/runner'
+eval ${WDMRC_HOME}/dotnet/dotnet ${WDMRC_HOME}/wdmrc.dll --host=${WDMRC_HOST} --port=${WDMRC_PORT} ${WDMRC_ARGS}
