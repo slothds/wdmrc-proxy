@@ -1,7 +1,7 @@
-FROM    slothds/alpine-svd:3.9-ngx
+FROM    slothds/alpine-svd:3.9
 
 ARG     WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download"
-ARG     WDMRC_VERS="1.11.0.25"
+ARG     WDMRC_VERS="1.11.0.28"
 ARG     WDMRC_DNET="dotNetCore30"
 ARG     WDMRC_HOME="/opt/runner"
 
