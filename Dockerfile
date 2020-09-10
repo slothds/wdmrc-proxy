@@ -1,12 +1,12 @@
-FROM    slothds/alpine-svd:3.9
+FROM    slothds/alpine-svd:3.12
 
 ARG     WDMRC_REPO="https://github.com/yar229/WebDavMailRuCloud/releases/download"
-ARG     WDMRC_VERS="1.11.0.28"
+ARG     WDMRC_VERS="1.11.0.30"
 ARG     WDMRC_DNET="dotNetCore30"
 ARG     WDMRC_HOME="/opt/runner"
 
-ARG     NCORE_VERS="3.1.5"
-ARG     NCORE_LINK="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-aspnetcore-${NCORE_VERS}-linux-x64-alpine-binaries"
+ARG     NCORE_VERS="3.1.8"
+ARG     NCORE_LINK="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-${NCORE_VERS}-linux-x64-alpine-binaries"
 
 ENV     WDMRC_HOST="http://*" \
         WDMRC_PORT="8010" \
